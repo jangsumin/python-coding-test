@@ -15,11 +15,8 @@ for t in range(1, tc + 1):
         # 오른쪽, 왼쪽, 위, 아래, 대각선 왼쪽 아래, 대각선 왼쪽 위, 대각선 오른쪽 아래, 대각선 오른쪽 위
         dx = [1, -1, 0, 0, -1, -1, 1, 1]
         dy = [0, 0, 1, -1, -1, 1, -1, 1]
-        changes = []
         for i in range(8):
-            if x + dx[i] < 1 or x + dx[i] > n or y + dy[i] < 1 or y + dy[i] > n:
-                continue
-            
+            changes = []
             k = 1
             while graph[y + k * dy[i]][x + k * dx[i]] != 0 and graph[y + k * dy[i]][x + k * dx[i]] != color and \
               1 <= y + k * dy[i] <= n and 1 <= x + k * dx[i] <= n:
@@ -30,7 +27,7 @@ for t in range(1, tc + 1):
                 for nx, ny in changes:
                     graph[nx][ny] = color
                     
-        print(graph)
+        # print(graph)
         
     white_cnt, black_cnt = 0, 0
     for i in range(n + 2):
